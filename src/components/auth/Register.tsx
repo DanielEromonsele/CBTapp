@@ -15,22 +15,22 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Insert Your Name"
-                className="w-full my-8 h-[45px] rounded-lg text-gray-600 font-semibold border pl-3 border-gray-400 bg-white"
+                className="w-full my-8 h-[45px] rounded-lg text-gray-600 font-semibold border pl-3 border-gray-400 bg-white outline-none"
               />
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full h-[45px] rounded-lg border text-gray-600 font-semibold pl-3 border-gray-400 bg-white"
+                className="w-full h-[45px] rounded-lg border text-gray-600 font-semibold pl-3 border-gray-400 bg-white outline-none"
               />
 
               <input
                 type=""
                 placeholder="Insert Your Phone Number"
-                className="w-full my-8 h-[45px] rounded-lg text-gray-600 font-semibold border pl-3 border-gray-400 bg-white"
+                className="w-full my-8 h-[45px] rounded-lg text-gray-600 font-semibold border pl-3 border-gray-400 bg-white outline-none"
               />
 
               <br />
-              <button className="w-full h-[45px] bg-blue-700 flex items-center justify-center rounded-lg pl-3 text-white">
+              <button className="w-full h-[45px] bg-blue-700 flex items-center justify-center rounded-lg pl-3 text-white ">
                 Register
               </button>
             </form>
