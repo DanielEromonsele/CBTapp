@@ -40,7 +40,7 @@ const Register = () => {
                 className="w-full h-[50px] rounded-lg text-gray-600 font-semibold border px-3 border-gray-400 bg-white outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
               />
               <button className="w-full h-[50px] bg-green-400 text-white font-semibold rounded-lg lg:hover:scale-105 hover:bg-green-500 transition-all duration-300">
-                Register
+                Login Here
               </button>
               <div className="text-gray-600 text-[15px]">
                 Don't have an account,

@@ -31,18 +31,18 @@ const Register = () => {
               {" "}
               {/* Increased spacing */}
               <input
-                type="text"
-                placeholder="Insert Your Name"
-                className="w-full h-[50px] rounded-lg text-gray-600 font-semibold border px-3 border-gray-400 bg-white outline-none focus:ring-green-400 focus:ring-2 transition-all duration-300"
-              />
-              <input
                 type="email"
-                placeholder="Email Address"
+                placeholder="Insert Your Email"
                 className="w-full h-[50px] rounded-lg text-gray-600 font-semibold border px-3 border-gray-400 bg-white outline-none focus:ring-green-400 focus:ring-2 transition-all duration-300"
               />
               <input
                 type="password"
                 placeholder="Input Password"
+                className="w-full h-[50px] rounded-lg text-gray-600 font-semibold border px-3 border-gray-400 bg-white outline-none focus:ring-green-400 focus:ring-2 transition-all duration-300"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
                 className="w-full h-[50px] rounded-lg text-gray-600 font-semibold border px-3 border-gray-400 bg-white outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
               />
               <button className="w-full h-[50px] bg-green-400 text-white font-semibold rounded-lg lg:hover:scale-105 hover:bg-green-500 transition-all duration-300">
