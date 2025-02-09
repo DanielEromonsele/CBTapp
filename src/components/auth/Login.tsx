@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import img2 from "../../assets/Exams-bro.png";
 

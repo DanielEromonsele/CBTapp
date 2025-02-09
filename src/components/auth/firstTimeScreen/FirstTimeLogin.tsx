@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import img1 from "../../../assets/Exams-bro.png";
 import img2 from "../../../assets/Online test-bro.png";
 
-document.title = "First Time | CBT";
-
 const FirstTimeLogin = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
@@ -15,8 +13,6 @@ const FirstTimeLogin = () => {
     educationBackground: "",
     examType: "",
     goal: "",
-    studyRecommendations: "",
-    examPeriod: "",
     studyHours: "",
   });
 
@@ -29,12 +25,12 @@ const FirstTimeLogin = () => {
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleNext = () => {
     if (step < 4) {
-      document.startViewTransition(() => setStep(step + 1));
+      setStep(step + 1);
     } else {
       localStorage.setItem("cbtUserData", JSON.stringify(formData));
       navigate("/");
@@ -43,25 +39,27 @@ const FirstTimeLogin = () => {
 
   const handleBack = () => {
     if (step > 1) {
-      document.startViewTransition(() => setStep(step - 1));
+      setStep(step - 1);
     }
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-green-600">
-      <div className="w-[80%] h-[80%] bg-white p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center">
+    <div className="w-full min-h-screen flex justify-center items-center bg-green-600 p-4">
+      <div className="w-full max-w-5xl bg-white p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center min-h-[80vh]">
         {step !== 4 && (
-          <div
-            className="hidden lg:block w-[50%] min-h-[400px] bg-cover bg-center rounded-lg"
-            style={{ backgroundImage: `url(${step % 2 === 0 ? img2 : img1})` }}
-          ></div>
+          <div className="hidden lg:flex w-[45%] min-h-[400px] bg-cover bg-center rounded-lg mr-6">
+            <img
+              src={step % 2 === 0 ? img2 : img1}
+              className="w-full h-full object-cover rounded-lg"
+            />
+          </div>
         )}
-        <div className="w-full lg:w-[50%] p-6 flex flex-col justify-center">
-          <h1 className="text-2xl font-bold text-green-800 mb-2">
+
+        <div className="w-full lg:w-[50%] p-4 flex flex-col justify-center h-full">
+          <h1 className="text-2xl font-bold text-green-800 mb-3 text-center">
             First Time Setup
           </h1>
-          <p className="text-gray-600 mb-6">Step {step} of 4</p>
-
+          <p className="text-gray-600 mb-4 text-center">Step {step} of 4</p>
           {step === 1 && (
             <div>
               <label className="block mb-2 font-medium">Full Name</label>
@@ -70,7 +68,7 @@ const FirstTimeLogin = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full border p-2 rounded mb-4 focus:ring-green-400 focus:ring-2"
+                className="w-full border p-3 rounded mb-4 focus:ring-green-400 focus:ring-2"
                 required
               />
               <label className="block mb-2 font-medium">House Address</label>
@@ -79,7 +77,7 @@ const FirstTimeLogin = () => {
                 name="houseAddress"
                 value={formData.houseAddress}
                 onChange={handleChange}
-                className="w-full border p-2 rounded mb-4 focus:ring-green-400 focus:ring-2"
+                className="w-full border p-3 rounded mb-4 focus:ring-green-400 focus:ring-2"
                 required
               />
               <label className="block mb-2 font-medium">Phone Number</label>
@@ -88,12 +86,13 @@ const FirstTimeLogin = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border p-3 rounded"
                 required
               />
             </div>
           )}
 
+          {/* Step 2 */}
           {step === 2 && (
             <div>
               <label className="block mb-2 font-medium">
@@ -103,7 +102,7 @@ const FirstTimeLogin = () => {
                 name="educationBackground"
                 value={formData.educationBackground}
                 onChange={handleChange}
-                className="w-full border p-2 rounded mb-4 focus:ring-green-400 focus:ring-2"
+                className="w-full border p-3 rounded mb-4 focus:ring-green-400 focus:ring-2"
                 required
               >
                 <option value="">Select</option>
@@ -116,7 +115,7 @@ const FirstTimeLogin = () => {
                 name="examType"
                 value={formData.examType}
                 onChange={handleChange}
-                className="w-full border p-2 rounded mb-4 focus:ring-green-400 focus:ring-2"
+                className="w-full border p-3 rounded mb-4 focus:ring-green-400 focus:ring-2"
                 required
               >
                 <option value="">Select</option>
@@ -127,7 +126,6 @@ const FirstTimeLogin = () => {
               </select>
             </div>
           )}
-
           {step === 3 && (
             <div>
               <label className="block mb-2 font-medium">Study Goal</label>
@@ -136,34 +134,45 @@ const FirstTimeLogin = () => {
                 name="goal"
                 value={formData.goal}
                 onChange={handleChange}
-                className="w-full border p-2 rounded mb-4 focus:ring-green-400 focus:ring-2"
+                className="w-full border p-3 rounded mb-4 focus:ring-green-400 focus:ring-2"
               />
               <label className="block mb-2 font-medium">
                 Preferred Study Hours
               </label>
-              <input
-                type="number"
+              <select
                 name="studyHours"
                 value={formData.studyHours}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
-              />
+                className="w-full border p-3 rounded focus:ring-green-400 focus:ring-2"
+              >
+                <option value="">Select</option>
+                <option value="1 hour">1 hour</option>
+                <option value="3 hours">3 hours</option>
+                <option value="5 hours">5 hours</option>
+                <option value="5-10 hours">5-10 hours</option>
+              </select>
             </div>
           )}
-
           {step === 4 && (
-            <div className="text-center">
-              <h2 className="text-xl font-semibold mb-4">
+            <div className="text-center p-6 bg-gray-100 rounded-lg shadow-md">
+              <h2 className="text-2xl font-semibold mb-6 text-green-800">
                 Review Your Information
               </h2>
-              {Object.entries(formData).map(([key, value]) => (
-                <p key={key} className="text-gray-700 mb-2 capitalize">
-                  <span className="font-semibold">
-                    {key.replace(/([A-Z])/g, " $1")}:{" "}
-                  </span>{" "}
-                  {value || "N/A"}
-                </p>
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                {Object.entries(formData).map(([key, value]) => (
+                  <div
+                    key={key}
+                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-300"
+                  >
+                    <p className="text-sm text-gray-500 font-medium uppercase">
+                      {key.replace(/([A-Z])/g, " $1")}
+                    </p>
+                    <p className="text-lg font-semibold text-gray-700">
+                      {value || "N/A"}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
