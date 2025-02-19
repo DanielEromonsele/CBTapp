@@ -28,7 +28,6 @@ const Register = () => {
             </div>
             <form className="w-full max-w-md space-y-6">
               {" "}
-              {/* Increased spacing */}
               <input
                 type="email"
                 placeholder="Insert Your Email"

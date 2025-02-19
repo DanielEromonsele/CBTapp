@@ -61,8 +61,6 @@ const Strategy = () => {
           sessions, real-time progress tracking, and comprehensive support for
           learners.
         </p>
-
-        {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {strategyItems.map((item, index) => (
             <motion.div
@@ -77,8 +75,7 @@ const Strategy = () => {
               }}
               viewport={{ once: true }}
             >
-              {/* Larger Icon with Red Background & White Image */}
-              <div className="w-20 h-20 bg-red-500 rounded-full mb-4 flex items-center justify-center">
+              <div className="w-20 h-20 bg-red-600 rounded-full mb-4 flex items-center justify-center">
                 <img
                   src={item.icon}
                   alt={item.title}

@@ -26,7 +26,7 @@ const Hero = () => {
           <div className="flex space-x-4">
             <Link to={"/auth/login"}>
               <motion.button
-                className="bg-red-500 font-semibold px-6 py-3 rounded-lg shadow-md"
+                className="bg-red-600 font-semibold px-6 py-3 rounded-lg shadow-md text-white"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}

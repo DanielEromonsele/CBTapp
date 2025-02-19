@@ -12,7 +12,7 @@ const Register = () => {
             </h1>
           </div>
           <Link to="/auth/register">
-            <div className="text-[20px] text-green-600 font-semibold border border-green-600 px-4 py-2 flex items-center justify-center rounded-lg">
+            <div className="text-[16px] sm:text-[20px] text-green-600 font-semibold border border-green-600 px-3 sm:px-4 py-1 sm:py-2 flex items-center justify-center rounded-lg">
               Register Here
             </div>
           </Link>
