@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import img2 from "../../assets/Exams-bro.png";
 
-const Register = () => {
+const Login = () => {
   return (
     <div className="bg-green-400 min-h-screen w-full flex items-center justify-center">
       <div className="min-w-[70%] h-[750px] border bg-white">
@@ -65,4 +65,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
